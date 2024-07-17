@@ -1,12 +1,13 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
 
-@Controller()
+@Controller('/users') //Add user route
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
+  //Change the function name to get users
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  getUsers(): string[] {
+    return this.appService.getUsers();
   }
 }
